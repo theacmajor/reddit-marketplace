@@ -30,7 +30,7 @@ export function ListingCard({ listing, priority, className }: Props) {
   return (
     <article
       className={cn(
-        "group relative flex flex-col rounded-3xl bg-card shadow-sm transition-shadow hover:shadow-lg",
+        "group relative flex flex-col rounded-3xl bg-card shadow-sm transition-shadow duration-200 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] hover:shadow-lg",
         className,
       )}
     >
@@ -47,7 +47,7 @@ export function ListingCard({ listing, priority, className }: Props) {
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
               priority={priority}
-              className="object-cover transition duration-500 group-hover:scale-105"
+              className="object-cover transition-transform duration-[400ms] [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] group-hover:scale-105"
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-muted to-secondary text-muted-foreground">

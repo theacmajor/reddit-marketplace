@@ -61,7 +61,7 @@ export async function Hero() {
                 <Link
                   key={t}
                   href={`/listings?q=${encodeURIComponent(t)}`}
-                  className="rounded-full bg-background px-3 py-1 text-xs font-medium shadow-sm hover:bg-secondary transition"
+                  className="rounded-full bg-background px-3 py-1 text-xs font-medium shadow-sm transition-[transform,background-color,box-shadow] duration-200 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] hover:-translate-y-0.5 hover:bg-secondary hover:shadow-md active:scale-[0.95]"
                 >
                   {t}
                 </Link>
@@ -154,7 +154,7 @@ function CategoryChip({
   return (
     <Link
       href={`/listings?category=${label.toUpperCase()}`}
-      className="inline-flex items-center gap-1.5 rounded-full bg-secondary/80 px-3 py-1.5 text-xs font-medium transition hover:bg-secondary"
+      className="inline-flex items-center gap-1.5 rounded-full bg-secondary/80 px-3 py-1.5 text-xs font-medium transition-[transform,background-color] duration-200 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] hover:-translate-y-0.5 hover:bg-secondary active:scale-[0.95]"
     >
       {icon}
       {label}

@@ -137,7 +137,7 @@ export function ReportDialog({ listingId, className }: Props) {
                     type="button"
                     onClick={() => setReason(r.value)}
                     className={cn(
-                      "flex items-center gap-2.5 rounded-2xl px-3.5 py-3 text-left transition",
+                      "flex items-center gap-2.5 rounded-2xl px-3.5 py-3 text-left transition-[transform,background-color,color] duration-200 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] active:scale-[0.96]",
                       active
                         ? "bg-foreground text-background"
                         : "bg-secondary/60 hover:bg-secondary",

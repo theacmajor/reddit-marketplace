@@ -77,7 +77,7 @@ export function Pagination({ page, totalPages, total, pageSize }: Props) {
               onClick={() => goTo(p)}
               disabled={pending}
               className={cn(
-                "min-w-9 rounded-full px-3 py-1.5 text-xs font-medium transition",
+                "min-w-9 rounded-full px-3 py-1.5 text-xs font-medium transition-[background-color,color] duration-200 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)]",
                 p === page
                   ? "bg-foreground text-background"
                   : "bg-secondary/70 text-foreground hover:bg-secondary",

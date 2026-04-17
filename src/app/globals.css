@@ -88,3 +88,58 @@
     scrollbar-width: none;
   }
 }
+
+/* Emil Kowalski easing curves */
+:root {
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* Button press feedback */
+@media (hover: hover) and (pointer: fine) {
+  button,
+  [role="button"],
+  a[class*="button"] {
+    transition: transform 160ms var(--ease-out-strong), box-shadow 200ms ease, background-color 200ms ease, color 200ms ease, opacity 200ms ease;
+  }
+
+  button:active,
+  [role="button"]:active,
+  a[class*="button"]:active {
+    transform: scale(0.97);
+  }
+}
+
+/* Stagger-in for grid items */
+@keyframes stagger-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-grid > * {
+  animation: stagger-in 400ms var(--ease-out-strong) both;
+}
+.stagger-grid > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-grid > *:nth-child(2) { animation-delay: 50ms; }
+.stagger-grid > *:nth-child(3) { animation-delay: 100ms; }
+.stagger-grid > *:nth-child(4) { animation-delay: 150ms; }
+.stagger-grid > *:nth-child(5) { animation-delay: 200ms; }
+.stagger-grid > *:nth-child(6) { animation-delay: 250ms; }
+.stagger-grid > *:nth-child(7) { animation-delay: 300ms; }
+.stagger-grid > *:nth-child(8) { animation-delay: 350ms; }
+.stagger-grid > *:nth-child(9) { animation-delay: 400ms; }
+.stagger-grid > *:nth-child(n+10) { animation-delay: 450ms; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

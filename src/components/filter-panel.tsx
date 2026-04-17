@@ -300,7 +300,7 @@ function CategoryPill({
       type="button"
       onClick={onClick}
       className={cn(
-        "rounded-full px-3 py-2 text-xs font-medium transition",
+        "rounded-full px-3 py-2 text-xs font-medium transition-[background-color,color] duration-200 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)]",
         active
           ? "bg-foreground text-background"
           : "bg-secondary/70 text-foreground/80 hover:bg-secondary",

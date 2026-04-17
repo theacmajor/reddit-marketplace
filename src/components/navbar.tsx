@@ -17,8 +17,8 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl">
       <div className="container flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-2 shrink-0">
-          <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-primary text-primary-foreground font-bold text-lg">
+        <Link href="/" className="flex items-center gap-2 shrink-0 group/logo">
+          <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-primary text-primary-foreground font-bold text-lg transition-transform duration-200 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] group-hover/logo:rotate-[-4deg] group-hover/logo:scale-110 group-active/logo:scale-95">
             b
           </div>
           <span className="text-lg font-semibold tracking-tight hidden sm:inline">

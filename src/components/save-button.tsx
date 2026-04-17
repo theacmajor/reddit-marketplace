@@ -31,7 +31,7 @@ export function SaveButton({ listingId, variant = "full", className, size }: Pro
         aria-pressed={saved}
         aria-label={saved ? "Remove from saved" : "Save listing"}
         className={cn(
-          "inline-flex h-9 w-9 items-center justify-center rounded-full bg-background/95 text-foreground shadow-sm backdrop-blur transition hover:scale-105 hover:bg-background",
+          "inline-flex h-9 w-9 items-center justify-center rounded-full bg-background/95 text-foreground shadow-sm backdrop-blur transition-[transform,background-color] duration-200 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] hover:scale-110 hover:bg-background active:scale-95",
           saved && "bg-primary text-primary-foreground hover:bg-primary",
           className,
         )}

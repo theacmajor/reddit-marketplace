@@ -32,7 +32,7 @@ export function CategoryTiles() {
           <Link
             key={c}
             href={`/listings?category=${c}`}
-            className="group flex flex-col items-center justify-center gap-2 rounded-3xl bg-secondary/60 p-5 text-center transition hover:bg-secondary"
+            className="group flex flex-col items-center justify-center gap-2 rounded-3xl bg-secondary/60 p-5 text-center transition-[transform,background-color] duration-200 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] hover:-translate-y-1 hover:bg-secondary hover:shadow-md active:scale-[0.97]"
           >
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-background text-foreground shadow-sm transition group-hover:text-primary">
               <Icon className="h-5 w-5" />

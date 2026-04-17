@@ -17,7 +17,7 @@ export function ListingGrid({ listings }: Props) {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+    <div className="stagger-grid grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
       {listings.map((listing, index) => (
         <ListingCard
           key={listing.id}
