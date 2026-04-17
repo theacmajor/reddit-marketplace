@@ -39,20 +39,22 @@ export function ListingCard({ listing, priority, className }: Props) {
         aria-label={listing.title}
         className="relative block aspect-[4/3] w-full rounded-t-3xl bg-muted"
       >
-        {cover ? (
-          <Image
-            src={cover}
-            alt={listing.title}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-            priority={priority}
-            className="rounded-t-3xl object-cover transition duration-500 group-hover:scale-[1.03]"
-          />
-        ) : (
-          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-muted to-secondary text-muted-foreground">
-            <ImageOff className="h-6 w-6" />
-          </div>
-        )}
+        <div className="absolute inset-0 overflow-hidden rounded-t-3xl">
+          {cover ? (
+            <Image
+              src={cover}
+              alt={listing.title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+              priority={priority}
+              className="object-cover transition duration-500 group-hover:scale-105"
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-muted to-secondary text-muted-foreground">
+              <ImageOff className="h-6 w-6" />
+            </div>
+          )}
+        </div>
 
         {categoryLabel && (
           <div className="absolute left-3 top-3">
