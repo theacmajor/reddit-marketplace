@@ -46,7 +46,7 @@ export function ListingCard({ listing, priority, className }: Props) {
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
             priority={priority}
-            className="object-cover transition duration-500 group-hover:scale-105"
+            className="object-cover"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-muted to-secondary text-muted-foreground">
