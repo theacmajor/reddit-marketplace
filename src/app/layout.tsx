@@ -19,7 +19,15 @@ export const metadata: Metadata = {
   },
   description:
     "A clean, modern marketplace for Bangalore listings sourced from public Reddit posts. Flats, furniture, gadgets, and gigs from real redditors.",
-  metadataBase: new URL("https://bangalore.market"),
+  metadataBase: new URL("https://reddit-marketplace.vercel.app"),
+  openGraph: {
+    type: "website",
+    siteName: "bangalore.market",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
