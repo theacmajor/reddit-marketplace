@@ -3,6 +3,7 @@ import { Bookmark, Compass, LayoutDashboard, Search } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
@@ -51,7 +52,8 @@ export function Navbar() {
               </Link>
             </Button>
           ))}
-          <Button asChild size="sm" className="ml-2 hidden sm:inline-flex">
+          <ThemeToggle />
+          <Button asChild size="sm" className="ml-1 hidden sm:inline-flex">
             <Link href="/listings">Explore</Link>
           </Button>
         </nav>
