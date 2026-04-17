@@ -37,8 +37,7 @@ export function ListingCard({ listing, priority, className }: Props) {
       <Link
         href={detailHref}
         aria-label={listing.title}
-        className="relative isolate block aspect-[4/3] w-full overflow-hidden rounded-t-3xl bg-muted will-change-transform"
-        style={{ transform: "translateZ(0)" }}
+        className="relative block aspect-[4/3] w-full rounded-t-3xl bg-muted"
       >
         {cover ? (
           <Image
@@ -47,7 +46,7 @@ export function ListingCard({ listing, priority, className }: Props) {
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
             priority={priority}
-            className="object-cover transition duration-500 group-hover:scale-105"
+            className="rounded-t-3xl object-cover transition duration-500 group-hover:scale-[1.03]"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-muted to-secondary text-muted-foreground">
