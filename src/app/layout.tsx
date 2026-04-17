@@ -47,7 +47,7 @@ export default function RootLayout({
       <body className={`${inter.variable} min-h-screen font-sans`}>
         <div className="relative flex min-h-screen flex-col">
           <Navbar />
-          <main className="flex-1 animate-fade-in">{children}</main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </div>
       </body>
