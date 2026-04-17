@@ -30,14 +30,14 @@ export function ListingCard({ listing, priority, className }: Props) {
   return (
     <article
       className={cn(
-        "group relative flex flex-col overflow-hidden rounded-3xl bg-card shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg",
+        "group relative flex flex-col rounded-3xl bg-card shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg",
         className,
       )}
     >
       <Link
         href={detailHref}
         aria-label={listing.title}
-        className="relative block aspect-[4/3] w-full overflow-hidden bg-muted"
+        className="relative block aspect-[4/3] w-full overflow-hidden rounded-t-3xl bg-muted"
       >
         {cover ? (
           <Image
