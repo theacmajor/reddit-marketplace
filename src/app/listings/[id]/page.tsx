@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { AnimatedText, AnimatedFadeIn } from "@/components/animated-text";
 import {
   ArrowLeft,
   ArrowUpRight,
@@ -100,9 +101,12 @@ export default async function ListingDetailsPage({ params }: PageProps) {
               )}
             </div>
 
-            <h1 className="text-3xl font-semibold leading-tight tracking-tight md:text-[2.75rem] md:leading-[1.1]">
-              {listing.title}
-            </h1>
+            <AnimatedText
+              text={listing.title}
+              as="h1"
+              className="text-3xl font-semibold leading-tight tracking-tight md:text-[2.75rem] md:leading-[1.1]"
+              wordDelay={40}
+            />
 
             <MetadataRow listing={listing} prettyDate={prettyDate} />
 

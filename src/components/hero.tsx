@@ -12,6 +12,7 @@ import {
   Users,
 } from "lucide-react";
 
+import { AnimatedText, AnimatedFadeIn } from "@/components/animated-text";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { fetchListings } from "@/lib/listings-repo";
@@ -25,52 +26,69 @@ export async function Hero() {
 
       <div className="relative grid items-center gap-10 lg:grid-cols-[1.3fr_1fr] lg:gap-16">
         <div className="space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full bg-background px-4 py-1.5 text-xs font-medium shadow-sm">
-            <Sparkles className="h-3.5 w-3.5 text-primary" />
-            Live from r/BangaloreMarketplace
-          </div>
-          <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
-            The Bangalore marketplace,
-            <br />
-            rebuilt from Reddit.
-          </h1>
-          <p className="max-w-xl text-base text-muted-foreground md:text-lg">
-            Discover flats, furniture, gadgets, and gigs posted by real redditors
-            in your neighborhood. No more subreddit scrolling.
-          </p>
+          <AnimatedFadeIn>
+            <div className="inline-flex items-center gap-2 rounded-full bg-background px-4 py-1.5 text-xs font-medium shadow-sm">
+              <Sparkles className="h-3.5 w-3.5 text-primary" />
+              Live from r/BangaloreMarketplace
+            </div>
+          </AnimatedFadeIn>
 
-          <form
-            action="/listings"
-            className="flex w-full max-w-xl items-center gap-2 rounded-full bg-background p-1.5 shadow-sm"
-          >
-            <Search className="ml-3 h-4 w-4 text-muted-foreground shrink-0" />
-            <Input
-              name="q"
-              placeholder="Try '2BHK Indiranagar' or 'MacBook'"
-              className="bg-transparent shadow-none focus-visible:ring-0 focus-visible:ring-offset-0 h-10"
-            />
-            <Button type="submit" size="sm" className="gap-1">
-              Search <ArrowRight className="h-4 w-4" />
-            </Button>
-          </form>
+          <AnimatedText
+            text="The Bangalore marketplace,"
+            as="h1"
+            className="text-4xl font-semibold tracking-tight md:text-6xl"
+            wordDelay={70}
+          />
+          <AnimatedText
+            text="rebuilt from Reddit."
+            as="h1"
+            className="-mt-4 text-4xl font-semibold tracking-tight md:text-6xl"
+            wordDelay={70}
+          />
 
-          <div className="flex flex-wrap items-center gap-2 pt-2 text-sm text-muted-foreground">
-            <span>Popular:</span>
-            {["Koramangala flats", "MacBook", "Sofa", "Tiffin service", "Royal Enfield"].map(
-              (t) => (
-                <Link
-                  key={t}
-                  href={`/listings?q=${encodeURIComponent(t)}`}
-                  className="rounded-full bg-background px-3 py-1 text-xs font-medium shadow-sm hover:bg-secondary"
-                >
-                  {t}
-                </Link>
-              ),
-            )}
-          </div>
+          <AnimatedFadeIn delay={400}>
+            <p className="max-w-xl text-base text-muted-foreground md:text-lg">
+              Discover flats, furniture, gadgets, and gigs posted by real redditors
+              in your neighborhood. No more subreddit scrolling.
+            </p>
+          </AnimatedFadeIn>
+
+          <AnimatedFadeIn delay={550}>
+            <form
+              action="/listings"
+              className="flex w-full max-w-xl items-center gap-2 rounded-full bg-background p-1.5 shadow-sm"
+            >
+              <Search className="ml-3 h-4 w-4 text-muted-foreground shrink-0" />
+              <Input
+                name="q"
+                placeholder="Try '2BHK Indiranagar' or 'MacBook'"
+                className="bg-transparent shadow-none focus-visible:ring-0 focus-visible:ring-offset-0 h-10"
+              />
+              <Button type="submit" size="sm" className="gap-1">
+                Search <ArrowRight className="h-4 w-4" />
+              </Button>
+            </form>
+          </AnimatedFadeIn>
+
+          <AnimatedFadeIn delay={700}>
+            <div className="flex flex-wrap items-center gap-2 pt-2 text-sm text-muted-foreground">
+              <span>Popular:</span>
+              {["Koramangala flats", "MacBook", "Sofa", "Tiffin service", "Royal Enfield"].map(
+                (t) => (
+                  <Link
+                    key={t}
+                    href={`/listings?q=${encodeURIComponent(t)}`}
+                    className="rounded-full bg-background px-3 py-1 text-xs font-medium shadow-sm hover:bg-secondary transition"
+                  >
+                    {t}
+                  </Link>
+                ),
+              )}
+            </div>
+          </AnimatedFadeIn>
         </div>
 
-        <div className="hidden lg:block">
+        <AnimatedFadeIn delay={300} className="hidden lg:block">
           <div className="grid grid-cols-2 gap-3">
             <StatCard
               icon={<TrendingUp className="h-4 w-4" />}
@@ -102,7 +120,7 @@ export async function Hero() {
               </div>
             </div>
           </div>
-        </div>
+        </AnimatedFadeIn>
       </div>
     </section>
   );

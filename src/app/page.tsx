@@ -3,6 +3,7 @@ export const dynamic = "force-dynamic";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+import { AnimatedText, AnimatedFadeIn } from "@/components/animated-text";
 import { Button } from "@/components/ui/button";
 import { CategoryTiles } from "@/components/category-tiles";
 import { Hero } from "@/components/hero";
@@ -87,14 +88,21 @@ function SectionHeader({
   return (
     <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
       <div>
-        <div className="text-xs font-medium uppercase tracking-widest text-primary">
-          {eyebrow}
-        </div>
-        <h2 className="mt-1 text-2xl font-semibold tracking-tight md:text-3xl">
-          {title}
-        </h2>
+        <AnimatedFadeIn>
+          <div className="text-xs font-medium uppercase tracking-widest text-primary">
+            {eyebrow}
+          </div>
+        </AnimatedFadeIn>
+        <AnimatedText
+          text={title}
+          as="h2"
+          className="mt-1 text-2xl font-semibold tracking-tight md:text-3xl"
+          wordDelay={50}
+        />
         {description && (
-          <p className="mt-1 text-sm text-muted-foreground">{description}</p>
+          <AnimatedFadeIn delay={200}>
+            <p className="mt-1 text-sm text-muted-foreground">{description}</p>
+          </AnimatedFadeIn>
         )}
       </div>
       {action}

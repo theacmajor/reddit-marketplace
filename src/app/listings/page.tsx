@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 
+import { AnimatedText, AnimatedFadeIn } from "@/components/animated-text";
 import { FilterPanel } from "@/components/filter-panel";
 import { ListingGrid } from "@/components/listing-grid";
 import { ListingGridSkeleton } from "@/components/listing-skeleton";
@@ -31,15 +32,22 @@ export default async function ListingsPage({ searchParams }: PageProps) {
   return (
     <div className="container py-8 md:py-10">
       <header className="mb-8 space-y-1">
-        <div className="text-xs font-medium uppercase tracking-widest text-primary">
-          Marketplace
-        </div>
-        <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-          Bangalore listings
-        </h1>
-        <p className="text-sm text-muted-foreground">
-          Search, filter, and save community listings pulled from r/BangaloreMarketplace.
-        </p>
+        <AnimatedFadeIn>
+          <div className="text-xs font-medium uppercase tracking-widest text-primary">
+            Marketplace
+          </div>
+        </AnimatedFadeIn>
+        <AnimatedText
+          text="Bangalore listings"
+          as="h1"
+          className="text-3xl font-semibold tracking-tight md:text-4xl"
+          wordDelay={80}
+        />
+        <AnimatedFadeIn delay={250}>
+          <p className="text-sm text-muted-foreground">
+            Search, filter, and save community listings pulled from r/BangaloreMarketplace.
+          </p>
+        </AnimatedFadeIn>
       </header>
 
       <div className="grid gap-8 lg:grid-cols-[280px_minmax(0,1fr)] xl:grid-cols-[320px_minmax(0,1fr)]">
