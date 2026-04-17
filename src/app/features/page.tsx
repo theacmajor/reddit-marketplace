@@ -57,7 +57,7 @@ export default async function FeaturesPage() {
         <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
           Buying and selling on Reddit is painful.
         </h2>
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="stagger-grid grid gap-4 md:grid-cols-3">
           <ProblemCard
             icon={<Search className="h-5 w-5" />}
             title="No search or filters"
@@ -86,7 +86,7 @@ export default async function FeaturesPage() {
           structured data from unstructured text, and present it in a clean UI
           you can actually browse.
         </p>
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="stagger-grid grid gap-4 md:grid-cols-2">
           <SolutionCard
             icon={<Filter className="h-5 w-5" />}
             title="Filter by everything"
@@ -170,7 +170,7 @@ export default async function FeaturesPage() {
         <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
           Built with modern, boring technology.
         </h2>
-        <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3">
+        <div className="stagger-grid grid gap-3 sm:grid-cols-2 md:grid-cols-3">
           <TechPill label="Next.js 16" detail="App Router, RSC" />
           <TechPill label="TypeScript" detail="End to end" />
           <TechPill label="Tailwind CSS" detail="Utility-first styling" />
@@ -188,7 +188,7 @@ export default async function FeaturesPage() {
         <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
           Moderation built in from day one.
         </h2>
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="stagger-grid grid gap-4 md:grid-cols-2">
           <SolutionCard
             icon={<Shield className="h-5 w-5" />}
             title="Password-protected admin"
@@ -253,7 +253,7 @@ function ProblemCard({
   description: string;
 }) {
   return (
-    <div className="rounded-3xl bg-destructive/5 p-6 dark:bg-destructive/10">
+    <div className="rounded-3xl bg-destructive/5 p-6 transition-[transform,box-shadow] duration-200 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] hover:-translate-y-1 hover:shadow-lg dark:bg-destructive/10">
       <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-destructive/10 text-destructive">
         {icon}
       </div>
@@ -273,8 +273,8 @@ function SolutionCard({
   description: string;
 }) {
   return (
-    <div className="rounded-3xl bg-secondary/50 p-6">
-      <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-background shadow-sm">
+    <div className="rounded-3xl bg-secondary/50 p-6 transition-[transform,box-shadow] duration-200 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] hover:-translate-y-1 hover:shadow-lg">
+      <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-background shadow-sm transition-transform duration-200 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] group-hover:scale-110">
         {icon}
       </div>
       <h3 className="mt-4 font-semibold">{title}</h3>
@@ -295,9 +295,9 @@ function PipelineStep({
   description: string;
 }) {
   return (
-    <div className="flex gap-4 py-5 border-b border-border/40 last:border-0">
+    <div className="flex gap-4 py-5 border-b border-border/40 last:border-0 transition-[transform,background-color] duration-200 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] hover:translate-x-1 rounded-2xl hover:bg-secondary/30 hover:px-3 hover:-mx-3">
       <div className="flex flex-col items-center gap-1">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground text-sm font-bold">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground text-sm font-bold transition-transform duration-200 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] hover:scale-110">
           {step}
         </div>
       </div>
@@ -314,7 +314,7 @@ function PipelineStep({
 
 function TechPill({ label, detail }: { label: string; detail: string }) {
   return (
-    <div className="flex items-center gap-3 rounded-2xl bg-secondary/50 px-4 py-3">
+    <div className="flex items-center gap-3 rounded-2xl bg-secondary/50 px-4 py-3 transition-[transform,box-shadow,background-color] duration-200 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] hover:-translate-y-0.5 hover:bg-secondary hover:shadow-md active:scale-[0.97]">
       <div className="text-sm font-semibold">{label}</div>
       <div className="text-xs text-muted-foreground">{detail}</div>
     </div>
