@@ -30,7 +30,7 @@ export function ListingCard({ listing, priority, className }: Props) {
   return (
     <article
       className={cn(
-        "group relative flex flex-col rounded-3xl bg-card shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg",
+        "group relative flex flex-col rounded-3xl bg-card shadow-sm transition-shadow hover:shadow-lg",
         className,
       )}
     >
