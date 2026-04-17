@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Bookmark, Compass, LayoutDashboard, Search } from "lucide-react";
+import { Bookmark, Compass, LayoutDashboard, Search, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { href: "/listings", label: "Browse", icon: Compass },
+  { href: "/features", label: "Features", icon: Sparkles },
   { href: "/saved", label: "Saved", icon: Bookmark },
   { href: "/admin", label: "Admin", icon: LayoutDashboard },
 ] as const;

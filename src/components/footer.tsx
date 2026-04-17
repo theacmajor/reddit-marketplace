@@ -15,6 +15,9 @@ export function Footer() {
           <Link href="/listings" className="hover:text-foreground">
             Browse
           </Link>
+          <Link href="/features" className="hover:text-foreground">
+            Features
+          </Link>
           <Link href="/saved" className="hover:text-foreground">
             Saved
           </Link>
